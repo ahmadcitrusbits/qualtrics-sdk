@@ -6,29 +6,12 @@
  */
 
 import React from 'react';
-import {
-  Button,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Button, SafeAreaView, StatusBar} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-// import Qualtrics from 'react-native-qualtrics';
-const Qualtrics = {};
-import {NativeModules} from 'react-native';
-const {RNQualtricsDigital} = NativeModules || {}
-console.log({NativeModules, RNQualtricsDigital});
+import Qualtrics from 'react-native-qualtrics';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   function initMe() {
     console.log('Initializing...');
     Qualtrics.initializeProjectWithExtRefId(
@@ -57,38 +40,12 @@ function App(): JSX.Element {
   }
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <View>
-        <Button title="Initialize Me" onPress={() => initMe()} />
-      </View>
-      <View>
-        <Button title="Evaluate & Display Me" onPress={() => evalMe()} />
-      </View>
+    <SafeAreaView style={{backgroundColor: Colors.lighter}}>
+      <StatusBar barStyle={'light-content'} />
+      <Button title="Initialize Me" onPress={() => initMe()} />
+      <Button title="Evaluate & Display Me" onPress={() => evalMe()} />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

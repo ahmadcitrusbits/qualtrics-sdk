@@ -23,7 +23,7 @@ end
 
 target 'QualtricsSDK' do
   config = use_native_modules!
-  pod 'Qualtrics', '~> 2.4.0'
+  pod 'Qualtrics', '~> 2.9.1'
 
   # Flags change depending on the env values.
   flags = get_default_flags()
