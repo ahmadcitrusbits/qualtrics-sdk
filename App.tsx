@@ -15,8 +15,8 @@ function App(): JSX.Element {
   function initMe() {
     console.log('Initializing...');
     Qualtrics.initializeProjectWithExtRefId(
-      'northwestcompany',
-      'ZN_1BUTdAdrNbaHMrA',
+      'brandid',
+      'projectid',
       '',
       initializationResults => {
         console.log(initializationResults);
