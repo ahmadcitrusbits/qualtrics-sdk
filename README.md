@@ -6,6 +6,10 @@ react-native-qualtrics 2.4.1, 2.3.0, 2.2.0, <br>
 Qualtrics pods  2.9.1,  2.9.0,  2.4.0,  2.1.0, <br>
 hermes_enabled true/false
 
+node v18.14.2
+npm v9.5.0
+Xcode 13.4
+
 Error logs:
 
 [Simulator Screen Shot - iPhone 13 Pro Max - 2023-03-28 at 15 32 27](https://user-images.githubusercontent.com/90600804/228209415-502afc42-9e59-4d80-81d0-084ca6d83162.png)
